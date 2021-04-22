@@ -1,0 +1,22 @@
+<div>
+    <h1 class="title">All Animes</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        {{#each anime}}
+            <div class="col-4">
+                <a href="/anime/anime-details/{{mal_id}}">
+                <div class="anime">
+
+                    <img src={{image_url}} alt={{title}}>
+                    <p>{{title}}</p>
+
+                </div>
+                </a>
+            </div>
+        {{/each}} 
+
+    </div>
+</div>

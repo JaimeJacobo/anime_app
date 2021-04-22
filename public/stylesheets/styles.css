@@ -1,0 +1,234 @@
+@font-face{
+    font-family: mangat;
+    src: url("fonts/mangat.otf");
+}
+
+body{
+    font-family: mangat;
+}
+
+.nav-bar{
+    margin-top: -60px;
+    width: 100%;
+    position: fixed;
+    background-color: rgb(21, 115, 71);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.menu-anchors1{
+    font-family: mangat;
+    margin-left: 50px;
+}
+
+.menu-anchors2{
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    margin-right: 50px;
+}
+
+.nav-bar a{
+    font-size: 1.3rem;
+    color: white;
+    padding: 12px 40px;
+    text-decoration: none;
+}
+
+.nav-bar a:hover{
+    color:  rgb(21, 115, 71);
+    background-color: white;
+}
+
+main{
+    margin-top: 60px;
+}
+
+.title{
+    font-size: 3.5rem;
+    font-weight: 600;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.title2{
+    font-size: 2.8rem;
+    font-weight: 400;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.anime{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.anime p{
+    font-size: 1.45rem;
+}
+
+.anime img{
+    border: solid black 0.2rem;
+    height: 400px;
+}
+
+.details{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+}
+
+.details img{
+    border: solid black 0.2rem;
+    height: 400px;
+}
+
+.details div{
+    margin: 1rem 3rem;
+}
+
+.sinopsis{
+    text-align: justify;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.signup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.signupForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+
+.signupForm div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    width: 15rem;  
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+
+.loginForm div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    width: 15rem;  
+}
+
+.little-msg {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 1.2rem;
+}
+
+.little-msg a {
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(21, 115, 71);
+}
+
+.errorMsg{
+    margin-top: 3rem;
+    border: solid red 0.1rem;
+    padding: 0.5rem;
+    width: 15rem;
+    text-align: center;
+    align-self: center
+}
+
+.weirdo {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.gif {
+    border-radius: 15px;
+    display: flex;
+    margin: 0 auto;
+    height: 100px;
+    object-fit: cover;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.detalles{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.botones button{
+    margin: 0.3rem 0;
+    width: 16rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.columnasProf{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    text-align: center;
+}
+.columnasProf img{
+    border: solid black 0.2rem;
+    height: 400px;
+}

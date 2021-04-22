@@ -1,0 +1,62 @@
+<h1 class="title">Anime details</h1>
+
+<h2 class="title2">{{animeDetails.title}}</h2>
+<div class="details">
+<img src="{{animeDetails.image_url}}" alt="{{animeDetails.title}} image">
+    {{#if animeDetails.loggedIn}}
+        <div class="botones">
+            <form action="/profile/tosee-animes" method="POST">
+
+                <div style="display: none;">
+                    <input type="text" name="mal_id" value="{{animeDetails.mal_id}}">
+                    <input type="text" name="title" value="{{animeDetails.title}}">
+                    <input type="text" name="image_url" value="{{animeDetails.image_url}}">
+                </div>
+
+
+                <button type="submit" class="btn btn-success">Add to TO SEE list</button>
+            </form>
+            <form action="/profile/current-animes" method="POST">
+                <div style="display: none;">
+                    <input type="text" name="mal_id" value="{{animeDetails.mal_id}}">
+                    <input type="text" name="title" value="{{animeDetails.title}}">
+                    <input type="text" name="image_url" value="{{animeDetails.image_url}}">
+                </div>
+                <button type="submit" class="btn btn-success">Add to SEEING list</button>
+            </form>
+            <form action="/profile/watched-animes" method="POST">
+                <div style="display: none;">
+                    <input type="text" name="mal_id" value="{{animeDetails.mal_id}}">
+                    <input type="text" name="title" value="{{animeDetails.title}}">
+                    <input type="text" name="image_url" value="{{animeDetails.image_url}}">
+                </div>
+                <button type="submit" class="btn btn-success">Add to WATCHED list</button>
+            </form>
+        </div>
+    {{else}}
+        <p class="little-msg"> Don't have an account yet? Click <a href="/signup">HERE</a> to create one and access all funtionalities!</p>
+    {{/if}}
+<div class="contenedor">
+    <div class="detalles">
+        <div class="sinopsis"> 
+            <b>Synopsis:</b> {{animeDetails.synopsis}}
+        </div>
+        <div class="score">
+            <b>Score:</b> {{animeDetails.score}}
+        </div>
+        <div class="episodes">
+            <b>Number of Episodes:</b> {{animeDetails.episodes}}
+        </div>
+        <div class="duration">
+            <b>Duration:</b> {{animeDetails.duration}}
+        </div>
+        <div class="broadcast">
+            <b>Broadcasted at:</b> {{animeDetails.broadcast}}
+        </div>
+    </div>
+
+</div>
+</div>  
+
+
+
