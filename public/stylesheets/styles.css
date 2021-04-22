@@ -22,11 +22,18 @@ body{
 .menu-anchors1{
     font-family: mangat;
     margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .menu-anchors2{
     /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     margin-right: 50px;
+}
+
+.search-form{
+    margin: 0 30px;
 }
 
 .nav-bar a{
@@ -75,6 +82,7 @@ main{
 .anime img{
     border: solid black 0.2rem;
     height: 400px;
+    max-width: 285px;
 }
 
 .details{
@@ -87,6 +95,7 @@ align-items: center;
 .details img{
     border: solid black 0.2rem;
     height: 400px;
+    max-width: 285px;
 }
 
 .details div{
@@ -231,4 +240,15 @@ a {
 .columnasProf img{
     border: solid black 0.2rem;
     height: 400px;
+    max-width: 285px;
+}
+
+.pageSelector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin: 3rem auto;
+    width: 80%;
 }

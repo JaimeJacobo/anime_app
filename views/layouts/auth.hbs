@@ -14,14 +14,12 @@
         <div class="menu-anchors1">
             <a href="/">Homepage</a>
             <a href="/anime/all">All-anime</a>
+            <form class="d-flex search-form" action="/anime/search" method="post">
+                <input class="form-control me-2" type="search" placeholder="Search for your anime" aria-label="Search" name="search">
+                <button class="btn btn-outline-success" type="submit">&#128269</button>
+            </form>
         </div>
         <div class="menu-anchors2">
-            <div>
-                <form action="/search/{{title}}">
-                    <input type="text" name="search" placeholder="Search anime">
-                    <button type="submit">Search</button>
-                </form>
-            </div>
             <a href="/profile">Profile</a>
             <a href="/logout">Logout</a>
         </div>

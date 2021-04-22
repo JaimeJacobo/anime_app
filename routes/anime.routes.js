@@ -1,10 +1,33 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
+let page = 1
+
+
+/* PRUEBA PASAR PAGINAS */
+
+router.get(`/nextPage`,(req,res)=>{
+  page++
+  res.redirect(`/anime/all`)
+})
+
+router.get(`/firstPage`,(req,res)=>{
+  page=1
+  res.redirect(`/anime/all`)
+})
+
+router.get(`/previousPage`,(req,res)=>{
+  page--
+  if(page < 1){
+    page = 1
+    res.redirect(`/anime/all`)
+  }else{res.redirect(`/anime/all`)}
+})
+  
 
 /* GET all anime page */
 router.get(`/all`, (req, res)=>{
-  axios.get('https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1')
+  axios.get(`https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=${page}`)
     .then(result => {
 
       const layout = req.user ? '/layouts/auth' : '/layouts/noAuth'
@@ -39,6 +62,24 @@ router.get(`/anime-details/:id`, (req, res)=>{
         console.log(error)
       })
 })
+
+/* Post search form */
+router.post('/search', (req, res) => {
+  axios.get(`https://api.jikan.moe/v3/search/anime?q=${req.body.search}&page=${page}`)
+  .then(result => {
+
+    const layout = req.user ? '/layouts/auth' : '/layouts/noAuth'
+   
+      res.render('search-results', {anime: result.data.results, layout: layout} )
+    
+  })
+  .catch(error => {
+    console.log(error)
+  })
+    
+  
+})
+
 
 
 module.exports = router;
