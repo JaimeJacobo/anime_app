@@ -89,15 +89,6 @@ app.use('/', require('./routes/auth.routes'))
 app.use('/profile', require('./routes/profile.routes'))
 
 //-------LISTENER---------
-app.listen(3000, () => {
-  console.log(`Server open at port 3000`)
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server open`)
 })
-
-
-
-
-
-
-//-----API ENDPOINTS-------
-
-// Todos los animes: https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1
