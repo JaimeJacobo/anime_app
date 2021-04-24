@@ -1,33 +1,50 @@
-<h1 class="title">Hello {{data.username}}</h1><img class='gif' src='/images/{{data.image}}.gif' alt="GIF">
-<p class="weirdo">You're definitely a weirdo if you are using this app</p>
+<div class ="profile-title">
+    <p class="title">Welcome, {{data.username}}san!</p>
+    <img class='gif' src='/images/{{data.image}}.gif' alt="GIF">
+</div>
 
 
 <div class="columnasProf">
-    <div>
+    <div class="toSee">
         <h2>TO SEE</h2>
         {{#each data.toSeeAnimes}}
             <a href="/anime/anime-details/{{mal_id}}">
                 <img src={{image_url}} alt={{title}}>
             </a>
-            <p>{{title}}</p>  
+            <div class="title-section">
+                <p>{{title}}</p>
+                <form action="/profile/tosee-animes/delete/{{mal_id}}" method="POST">
+                    <button class="btn btn-danger" type="submit">Delete from TO SEE list</button>
+                </form>                  
+            </div>
         {{/each}}
     </div>
-    <div>
+    <div class="seeing">
         <h2>SEEING</h2>
         {{#each data.currentAnimes}}
             <a href="/anime/anime-details/{{mal_id}}">
                 <img src={{image_url}} alt={{title}}>
             </a>
-            <p>{{title}}</p>
+            <div class="title-section">
+                <p>{{title}}</p>
+                <form action="/profile/current-animes/delete/{{mal_id}}" method="POST">
+                    <button class="btn btn-danger" type="submit">Delete from SEEING list</button>
+                </form>                  
+            </div>
         {{/each}}
     </div>
-    <div>
+    <div class="watched">
         <h2>WATCHED</h2>
         {{#each data.watchedAnimes}}
             <a href="/anime/anime-details/{{mal_id}}">
             <img src={{image_url}} alt={{title}}>
             </a>
-            <p>{{title}}</p>
+            <div class="title-section">
+                <p>{{title}}</p>
+                <form action="/profile/watched-animes/delete/{{mal_id}}" method="POST">
+                    <button class="btn btn-danger" type="submit">Delete from WATCHED list</button>
+                </form>                  
+            </div>
         {{/each}}
     </div>
 </div>

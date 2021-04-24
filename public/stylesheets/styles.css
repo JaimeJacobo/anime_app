@@ -1,10 +1,10 @@
 @font-face{
-    font-family: mangat;
-    src: url("fonts/mangat.otf");
+    font-family: "Manga speak 2";
+    src: url("../fonts/Manga speak 2.ttf");
 }
 
 body{
-    font-family: mangat;
+    background-color: rgb(232, 236, 234);
 }
 
 .nav-bar{
@@ -20,7 +20,6 @@ body{
 }
 
 .menu-anchors1{
-    font-family: mangat;
     margin-left: 50px;
     display: flex;
     flex-direction: row;
@@ -28,12 +27,19 @@ body{
 }
 
 .menu-anchors2{
-    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     margin-right: 50px;
 }
 
 .search-form{
     margin: 0 30px;
+}
+
+.search-form__btn {
+    border: none;
+}
+
+.search-spinner {
+    display: none;
 }
 
 .nav-bar a{
@@ -52,7 +58,14 @@ main{
     margin-top: 60px;
 }
 
+.profile-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .title{
+    font-family: "Manga speak 2";
     font-size: 3.5rem;
     font-weight: 600;
     padding: 50px;
@@ -61,6 +74,7 @@ main{
 }
 
 .title2{
+    font-family: "Manga speak 2";
     font-size: 2.8rem;
     font-weight: 400;
     padding: 30px;
@@ -68,11 +82,21 @@ main{
     justify-content: center;
 }
 
+.anime-details p{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
 .anime{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.selected-page {
+    color: white;
+    background-color: rgb(21, 115, 71);
 }
 
 .anime p{
@@ -166,7 +190,7 @@ a {
     font-size: 1.2em;
     font-weight: bold;
     font-style: italic;
-    margin-top: 1.2rem;
+    margin-top: 4rem;
 }
 
 .little-msg a {
@@ -191,8 +215,6 @@ a {
 
 .gif {
     border-radius: 15px;
-    display: flex;
-    margin: 0 auto;
     height: 100px;
     object-fit: cover;
 }
@@ -241,6 +263,22 @@ a {
     border: solid black 0.2rem;
     height: 400px;
     max-width: 285px;
+}
+
+.columnasProf p {
+    font-size: 1.45rem;
+
+}
+
+.columnasProf .title-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid black;
 }
 
 .pageSelector{

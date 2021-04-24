@@ -1,12 +1,42 @@
 <div>
-    <h1 class="title">All Animes</h1>
+    <h1 class="title">All Anime</h1>
+</div>
+
+<div>
+  <ul class="pagination justify-content-center">
+    {{#unless page1}}
+        <li class="page-item">
+            <a class="page-link" href="/anime/previousPage" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="/anime/all/1">1</a></li>
+        {{#unless page2}}
+            <li class="page-item"><a class="page-link" href="/anime/all/{{prevPage}}">...</a></li>
+            <li class="page-item"><a class="page-link" href="/anime/all/{{prevPage}}">{{prevPage}}</a></li>
+        {{/unless}}
+    {{/unless}}
+    <li class="page-item"><a class="page-link selected-page" href="/anime/all/{{page}}">{{page}}</a></li>
+    {{#unless page300}}
+        {{#unless page299}}
+            <li class="page-item"><a class="page-link" href="/anime/all/{{nextPage}}">{{nextPage}}</a></li>
+            <li class="page-item"><a class="page-link" href="/anime/all/{{nextPage}}">...</a></li>
+        {{/unless}}
+        <li class="page-item"><a class="page-link" href="/anime/all/300">300</a></li>
+        <li class="page-item">
+        <a class="page-link" href="/anime/nextPage" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+    {{/unless}}
+  </ul>
 </div>
 
 <div class="container">
     <div class="row">
 
         {{#each anime}}
-            <div class="col-4">
+            <div class="col-4 anime-details">
                 <a href="/anime/anime-details/{{mal_id}}">
                 <div class="anime">
 
@@ -22,7 +52,4 @@
 </div>
 
 <div class="pageSelector">
-<a href="/anime/previousPage" class="btn btn-success">Previous Page</a>
-<a href="/anime/firstPage" class="btn btn-success">Go to First Page</a>
-<a href="/anime/nextPage" class="btn btn-success">Next Page</a>
 </div>

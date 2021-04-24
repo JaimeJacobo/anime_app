@@ -8,32 +8,39 @@ let page = 1
 
 router.get(`/nextPage`,(req,res)=>{
   page++
-  res.redirect(`/anime/all`)
-})
-
-router.get(`/firstPage`,(req,res)=>{
-  page=1
-  res.redirect(`/anime/all`)
+  res.redirect(`/anime/all/${page}`)
 })
 
 router.get(`/previousPage`,(req,res)=>{
   page--
   if(page < 1){
     page = 1
-    res.redirect(`/anime/all`)
-  }else{res.redirect(`/anime/all`)}
+    res.redirect(`/anime/all/${page}`)
+  } else {
+    res.redirect(`/anime/all/${page}`)
+  }
 })
   
 
 /* GET all anime page */
-router.get(`/all`, (req, res)=>{
-  axios.get(`https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=${page}`)
+router.get(`/all/:page`, (req, res)=>{
+  page = Number(req.params.page)
+  axios.get(`https://api.jikan.moe/v3/search/anime?q=&page=${req.params.page}&genre=12&genre_exclude=0&order_by=members&sort=desc`)
     .then(result => {
 
       const layout = req.user ? '/layouts/auth' : '/layouts/noAuth'
-     
-        res.render('all-anime', {anime: result.data.results, layout: layout} )
-      
+
+      res.render('all-anime', {
+        anime: result.data.results, 
+        layout: layout,
+        page,
+        prevPage: page - 1,
+        nextPage: page + 1,
+        page1: page === 1 ? true : false,
+        page2: page === 2 ? true : false,
+        page299: page === 299 ? true : false,
+        page300: page === 300 ? true : false,
+      })
     })
     .catch(error => {
       console.log(error)
@@ -65,13 +72,12 @@ router.get(`/anime-details/:id`, (req, res)=>{
 
 /* Post search form */
 router.post('/search', (req, res) => {
-  axios.get(`https://api.jikan.moe/v3/search/anime?q=${req.body.search}&page=${page}`)
+  axios.get(`https://api.jikan.moe/v3/search/anime?q=${req.body.search}&page=1`)
   .then(result => {
-
+    const resultSFW = result.data.results.filter((anime)=>anime.rated !== 'Rx')
     const layout = req.user ? '/layouts/auth' : '/layouts/noAuth'
-   
-      res.render('search-results', {anime: result.data.results, layout: layout} )
-    
+
+    res.render('search-results', {anime: resultSFW, layout: layout} )
   })
   .catch(error => {
     console.log(error)
