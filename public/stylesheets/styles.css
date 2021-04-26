@@ -160,12 +160,17 @@ a {
     margin: 1rem 0;
     width: 15rem;  
 }
+
 .login{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+}
+
+.login .sample-account {
+    font-size: 1.2rem;
 }
 
 .loginForm{

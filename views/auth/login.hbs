@@ -1,20 +1,22 @@
 <div class="login">
-<h1 class="title">Log in to your account</h1>
+    <h1 class="title">Log in to your account</h1>
 
-<form action="/login" method="POST" class="loginForm">
-<div>
-    <label for="username">Username: </label>
-    <input type="text" name="username">
-</div>
-<div>
-    <label for="password">Password: </label>
-    <input type="password" name="password">
-</div>
-    <button type="submit" class="btn btn-success">Log in</button>
+    <p class="sample-account">You can use our sample account: tanjiro (password: kimetsu)</p>
 
-</form>
+    <form action="/login" method="POST" class="loginForm">
+    <div>
+        <label for="username">Username: </label>
+        <input type="text" name="username">
+    </div>
+    <div>
+        <label for="password">Password: </label>
+        <input type="password" name="password">
+    </div>
+        <button type="submit" class="btn btn-success">Log in</button>
 
-{{#if errMsg}}
-   <p class="errorMsg">{{this.errMsg}}</p> 
-{{/if}}
+    </form>
+
+    {{#if errMsg}}
+    <p class="errorMsg">{{this.errMsg}}</p> 
+    {{/if}}
 </div>
